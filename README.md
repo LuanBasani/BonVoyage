@@ -39,7 +39,7 @@ A equipe utilizará **metodologias ágeis** e ferramentas digitais para o acompa
 ## 🛠️ Ferramentas Utilizadas
 - **Trello** → Anotações diárias e acompanhamento ágil (Kanban).  
 - **Excel** → Cronograma de atividades e controle de orçamento.
-- **VSCode** -> IDE para desenvolvimento e programação
+- **VSCode** → IDE para desenvolvimento e programação
 - **GitHub** → Compartilhamento dos códigos, versionamento e documentação.  
 
 ---
