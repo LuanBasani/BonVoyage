@@ -1,6 +1,6 @@
-# ✈️ Bon Voyage - Gestão de Passagens Aéreas  
+# ✈️ Bon Voyage  
 
-## 👥 Grupo
+## 👥 Membros do grupo
 - Alice Ortega de Oliveira  
 - Davi Brenna Martins  
 - Emily Guimarães Pereira  
@@ -10,60 +10,53 @@
 
 ---
 
-## 🎯 Objetivo do Projeto
-O **Bon Voyage** tem como objetivo desenvolver um sistema de **gestão e controle de passagens aéreas**, com foco em otimizar o processo de compra, organização e monitoramento de viagens, trazendo **eficiência, transparência e agilidade**.  
+## 📌 Tema do Projeto
+**Gestão e Controle de Passagens Aéreas**
 
 ---
 
-## 📌 Gestão do Projeto
-A equipe utilizará **metodologias ágeis** e ferramentas digitais para o acompanhamento e execução do projeto:  
+## 📝 Descrição
+O **Bon Voyage** é um sistema voltado para otimizar a **gestão de passagens aéreas**, permitindo o cadastro de clientes, controle de voos e reservas, emissão de passagens e geração de relatórios de viagens e custos.  
 
-- **Cronograma** → Organização das entregas por etapas.  
-- **Planner** → Definição das atividades e responsáveis.  
-- **Orçamento** → Controle de custos previstos e realizados.  
+Nosso objetivo é oferecer uma **solução eficiente, organizada e prática** tanto para clientes quanto para administradores, tornando o processo de gestão mais ágil e transparente.  
 
 ---
 
-## 📋 Levantamento de Requisitos
-- Cadastro de clientes.  
-- Cadastro de voos e passagens.  
+## 🚀 Funcionalidades
+- Cadastro de clientes e voos.  
 - Controle de reservas e emissão de passagens.  
 - Relatórios de viagens e custos.  
-- Interface amigável para consulta de passagens.  
-- Painel de administração para acompanhamento dos dados.  
-
-*(Este levantamento será detalhado e atualizado conforme a evolução do projeto.)*  
+- Painel administrativo para acompanhamento dos dados.  
+- Interface amigável e intuitiva.  
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
-- **Trello** → Anotações diárias e acompanhamento ágil (Kanban).  
-- **Excel** → Cronograma de atividades e controle de orçamento.
-- **VSCode** → IDE para desenvolvimento e programação.
-- **GitHub** → Compartilhamento dos códigos, versionamento e documentação.  
+## 🛠️ Tecnologias Utilizadas
+- **VSCode** → IDE para desenvolvimento  
+- **GitHub** → Versionamento e compartilhamento de código  
+- **Trello** → Organização de tarefas e metodologia ágil  
+- **Excel** → Cronograma e controle de orçamento  
 
 ---
 
-## 🗂️ Organização das Entregas
-- **Sprint 1:** Definição do escopo e levantamento inicial de requisitos.  
-- **Sprint 2:** Desenvolvimento do protótipo inicial.  
-- **Sprint 3:** Implementação das principais funcionalidades.  
-- **Sprint 4:** Testes, ajustes e entrega final.  
+## 🎯 Objetivo
+Desenvolver um sistema que **otimize o processo de compra e gestão de passagens**, facilitando o controle e melhorando a experiência do usuário e da equipe administrativa.  
 
 ---
 
-## 📊 Metodologia
-O grupo seguirá uma abordagem ágil, aplicando conceitos de **Scrum/Kanban**, com reuniões de alinhamento semanais e revisões de entregas a cada sprint.  
+## 📷 Prévia do Projeto
+*Em breve*  
 
 ---
 
-## ✅ Status do Projeto
-- [x] Formação do grupo  
-- [x] Definição do tema  
-- [ ] Levantamento completo de requisitos  
-- [ ] Protótipo inicial  
-- [ ] Implementação  
-- [ ] Testes e ajustes  
-- [ ] Entrega final  
+## 📌 Como acessar
+> O projeto será disponibilizado em breve com link para acesso online ou repositório público.  
 
 ---
+
+## 📄 Licença
+Este projeto é de uso educacional e sem fins lucrativos.  
+
+---
+
+🌍 **Bon Voyage - Tornando viagens mais simples e organizadas.**
