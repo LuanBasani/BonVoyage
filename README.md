@@ -1,4 +1,4 @@
-# ✈️ Bon Voyage
+# ✈️ BoM Voyage
 
 ## 👥 Membros do grupo
 - Alice Ortega de Oliveira
