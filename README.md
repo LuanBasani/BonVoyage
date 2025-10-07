@@ -46,7 +46,6 @@ Nosso objetivo é oferecer uma **solução eficiente, organizada e prática** ta
 
 ### Banco de Dados
 - **MySQL:** Ferramenta para banco de dados.
-- **MariaDB:** Ferramenta para banco de dados.
 
 ---
 
