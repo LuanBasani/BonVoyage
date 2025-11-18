@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Voyage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Zain', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            color: #3DED97;
+        }
+
+        header {
+            background: linear-gradient(35deg, #0e2638, #3170d6);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-width: 330px;
+            border-radius: 10px;
+
+        }
+
+        #logo {
+            margin: 0;
+            max-width: 100px;
+            width: 20%;
+            height: auto;
+        }
+
+        #titulo {
+            width: fit-content;
+            padding: 5px 15px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        body {
+            background-color: #0e2638;
+        }
+
+        .back {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: calc(100vh - 82px);
+            /* Altura total da tela menos a altura do header */
+            background-image: url("../../assets/institucional/bg-inicio-site.jpg");
+            min-width: 330px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-txt {
+            color: white;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="../../assets/logos/icone-fundo.png" alt="Logo">
+        <h1 id="titulo">BOM VOYAGE</h1>
+    </header>
+    <main>
+        <section class="back">
+            <div class="back-txt">
+                <h2>BOM VOYAGE</h2>
+            </div>
+        </section>
+
+        <section class="cronograma">
+            <h2>Testando viu !</h2>
+        </section>
+    </main>
+</body>
+
+</html>
