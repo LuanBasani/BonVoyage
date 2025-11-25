@@ -1,0 +1,148 @@
+:root{
+    --gap: 10px;
+    --col-side: 200px;
+}
+@media (max-width: 900px) {
+.grid{
+    grid-template-columns: 180px 1fr;
+    grid-template-areas: "header header" "menu main" "aside main";
+}
+}
+
+@media (max-width: 640px){
+    .grid{
+        grid-template-columns: 1fr ;
+        grid-template-areas: "header" "menu" "main" "aside";
+    }
+    .card-grid{
+        grid-template-columns: 1fr;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zain', sans-serif;
+}
+.grid{
+    display: grid;
+    grid-template-areas: "header header header" "menu main aside";
+    grid-template-columns: var(--col-side) 1fr var(--col-side);
+    grid-template-rows: auto 1fr auto;
+    gap: var(--gap);
+    min-height: 200px;
+    max-width: 3000px;
+    margin: 0 auto;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+nav a{
+    display: block;
+    background: #FA8334;
+    text-decoration: none;
+    color: #134e13;
+    padding: 5px 5px;
+    border-radius: 6px;
+    border: 1px solid #10C8A1
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: #3DED97;
+}
+header {
+    background: linear-gradient(35deg, #0e2638, #3170d6);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-width: 330px;
+    border-radius: 10px;
+    border: 1px solid black
+
+}
+
+#logo {
+    margin: 0;
+    max-width: 100px;
+    width: 20%;
+    height: auto;
+}
+
+#titulo {
+    width: fit-content;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 2em;
+}
+
+body {
+    background-color: #0e2638;
+}
+.Subtitulo{
+    padding: 5px 15px;
+    text-align: center;
+}
+
+header{
+    grid-area: header;
+}
+nav{
+    grid-area: menu;
+}
+main{
+    grid-area: main;
+}
+aside{
+    grid-area: aside;
+}
+
+button{
+    width: 50%;
+    background: #69BB76;
+    border-radius: 8px;
+}
+.seta ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+    text-align: center;
+}
+
+.seta a{
+    display: block;
+    background: #34faa7;
+    text-decoration: none;
+    color: #134e13;
+    padding: 5px 5px;
+    border-radius: 6px;
+    border: 1px solid #10C8A1
+}
+
+nav a:hover {
+    background-color: #2dc57c; 
+    color: #0e2638; 
+    box-shadow: 0 0 15px rgba(61, 237, 151, 0.6); 
+    border-color: #FA8334; 
+    font-weight: 700;
+}
+
+
+.seta a:hover {
+    background-color: #3DED97;
+    color: #0e2638;
+    transform: scale(1.1); 
+    box-shadow: 0 0 20px #3DED97; 
+}
