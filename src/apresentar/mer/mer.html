@@ -31,7 +31,146 @@
         </nav>
         <main>
             <h2 class="Subtitulo">Mer - Bom Voyage</h2>
+            <pre class="mermaid">
+            erDiagram
+                %% --- ENTIDADES (Baseadas na Imagem) ---
 
+                PASSAGEIROS {
+                    string CPF_RG PK
+                    string nome
+                    date dataNascimento
+                    string genero
+                    string endereco "1,n"
+                    string email
+                    string telefone
+                }
+
+                PASSAPORTES {
+                    int idPassaporte PK
+                    string NumeroPassaporte
+                    date DataEmissao
+                    date DataExpiracao
+                    string PaisEmissor
+                }
+
+                VISTOS {
+                    int idVisto PK
+                    string tipoVisto "1,n"
+                    date DataExpiracao
+                    date DataEmissao
+                    string TipoVisto
+                }
+
+                VACINACOES {
+                    int idVacinacao PK
+                    string Fabricante "1,n"
+                    date DataDose
+                    string NomeVacina
+                }
+
+                FUNCIONARIOS {
+                    string CPF PK
+                    string nome
+                    string cargo
+                    date dataContratacao
+                    string email
+                    string telefone
+                    float salario
+                }
+
+                COMPRAS {
+                    int idCompra PK
+                    string passagemIda
+                    string passagemVolta
+                }
+
+                PAGAMENTOS {
+                    int idPagamento PK
+                    string tipoPagamento "1,n"
+                    int idPassagem
+                    float Valor
+                    datetime DataHoraPagamento
+                    string StatusPagamento "1,n"
+                }
+
+                CHECK_IN {
+                    int idCheckin PK
+                    string Checkin
+                }
+
+                PASSAGENS {
+                    int idPassagem PK
+                    date dataEmissao
+                    float Preco
+                    string Classe "1,1"
+                }
+
+                VOOS {
+                    int idVoo PK
+                    string numeroVoo
+                    datetime dataHoraPartida
+                    datetime dataHoraChegada
+                    string Origem
+                    string Destino
+                }
+
+                ASSENTOS {
+                    string numeroAssento PK
+                }
+
+                PORTOES {
+                    int idPortao PK
+                    string Portao
+                }
+
+                AERONAVES {
+                    string numeroSerie PK
+                    string modelo
+                    string fabricante
+                    int capacidadePassageiros
+                    int anoFabricacao
+                }
+
+                AEROPORTOS {
+                    string codIATA PK
+                    string nomeAeroporto
+                    string endereco
+                }
+
+                %% --- RELACIONAMENTOS (Baseados na Imagem) ---
+
+                %% Passageiros e Documentos
+                PASSAGEIROS ||--|{ PASSAPORTES : "Têm (1,1 - 1,n)"
+                PASSAGEIROS ||--|{ VISTOS : "Possui (1,1 - 1,n)"
+                PASSAGEIROS ||--o{ VACINACOES : "Possui (1,1 - 0,n)"
+                
+                %% Passageiros e Processos
+                PASSAGEIROS ||--|{ COMPRAS : "Realizam (1,1 - 1,n)"
+                PASSAGEIROS ||--|| CHECK_IN : "Faz (1,1 - 1,1)"
+
+                %% Funcionarios
+                FUNCIONARIOS }|--|{ COMPRAS : "Gerenciam (1,n - 1,n)"
+
+                %% Fluxo da Compra
+                COMPRAS ||--|| PAGAMENTOS : "Recebem (1,1 - 1,1)"
+                COMPRAS ||--|{ PASSAGENS : "Contém (1,1 - 1,n)"
+
+                %% Fluxo da Viagem
+                CHECK_IN ||--|| VOOS : "Contém (1,1 - 1,1)"
+                PASSAGENS }|--|| VOOS : "Contém (1,n - 1,1)"
+                PASSAGENS ||--|| ASSENTOS : "Possuem (1,1 - 1,1)"
+
+                %% Aeronave e Assentos/Aeroportos
+                ASSENTOS }|--|| AERONAVES : "Pertencem (1,n - 1,1)"
+                VOOS }|--|| AERONAVES : "Contém (1,n - 1,1)"
+                
+                %% Logística de Aeroporto
+                VOOS ||--|| PORTOES : "Possuem (1,1 - 1,1)"
+                PORTOES }|--|| AEROPORTOS : "Ficam (1,n - 1,1)"
+                
+                %% Associação N:N
+                AERONAVES }|--|{ AEROPORTOS : "Ficam (1,n - 1,n)"
+        </pre>
         </main>
         <aside>
             <h2>Proxima Parte</h2>
@@ -42,5 +181,10 @@
             </section>
         </aside>
     </div>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
 </body>
 </html>
