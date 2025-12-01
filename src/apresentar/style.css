@@ -46,6 +46,17 @@ nav a{
     border-radius: 8px;
     padding: 12px;
 }
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
 
 @media (max-width: 900px) {
 .grid{
