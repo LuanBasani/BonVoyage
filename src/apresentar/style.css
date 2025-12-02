@@ -27,7 +27,7 @@ nav ul{
 }
 nav a{
     display: block;
-    background: #FA8334;
+    background: #34faa7;
     text-decoration: none;
     color: #134e13;
     padding: 5px 5px;
@@ -41,7 +41,7 @@ nav a{
     margin-top: 12px;
 }
 .card{
-    background: #ffffff;
+    background: #b1b1b1;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     padding: 12px;
@@ -112,7 +112,7 @@ header {
 }
 
 body {
-    background-color: #0e2638;
+    background-color: #fff;
 }
 .Subtitulo{
     padding: 5px 15px;
