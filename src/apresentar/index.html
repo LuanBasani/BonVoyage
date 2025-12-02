@@ -24,10 +24,11 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="mer/mer.html">Mer</a></li>
                 <li><a href="der/der.html">Der</a></li>
-                <li><a href="#">Banco de Dados</a></li>
+                <li><a href="banco_de_dados/banco.html">Banco de Dados</a></li>
                 <li><a href="metodologia/metodologia.html">Metodologia Ágil</a></li>
                 <li><a href="cronograma/cronograma.html">Cronograma</a></li>
                 <li><a href="sitemap/sitemap.html">Site Map</a></li>
+                <li><a href="mockup/mockup.html">Mock up</a></li>
                 <li><a href="../institucional/index.html">Institucional</a></li>
             </ul>
         </nav>
@@ -61,10 +62,42 @@
                     <p>Cronograma, pesquisas, análise do questionário, wireframe, MER, DER, dicionário de dados, estruturação do bando de dados</p>
                 </article>
                 <article class="card">
-                    <img src="img/davi.png" alt="Foto do Davi">
+                    <img src="../../assets/grupo/alice.jfif" alt="Foto da Alice">
                     <h3>Alice</h3>
-                    <p>Bla Bla Bla</p>
+                    <p>Pesquisa, cronograma</p>
                 </article>
+
+                <h2>Repositório do GitHub</h2>
+                <div id="repo">Carregando...</div>
+                <br>
+                <h2>Inicializando o Relátorio</h2>
+                <a href="../../docs/bomvoyage_tcc.docx" download>
+                    <button>Baixar Documento Word</button>
+                </a>
+
+
+
+
+                <script>
+                    const user = "luanbasani";          // ← coloque o nome do usuário
+                    const repo = "BonVoyage";      // ← coloque o nome do repo
+
+                    fetch(`https://api.github.com/repos/${user}/${repo}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            document.getElementById("repo").innerHTML = `
+                            <div style="color:#10C8A1">
+                                <h3>${data.name}</h3>
+                                <p>${data.description || "Sem descrição"}</p>
+                                <p><strong>📅 Atualizado:</strong> ${new Date(data.updated_at).toLocaleDateString()}</p>
+                                <a href="${data.html_url}" target="_blank" style="color:#10C8A1">Abrir no GitHub</a>
+                            </div>
+                            `;
+                        })
+                        .catch(err => {
+                            document.getElementById("repo").innerHTML = "Erro ao carregar repositório.";
+                        });
+                </script>
 
             </section>
         </main>

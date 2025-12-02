@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom Voyage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../padrao.css">
+    <style>
+        #sql{
+            color: #3DED97;
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+        <header>
+        <img id="logo" src="../../../assets/logos/icone-fundo.png" alt="Logo">            
+        <h1 id="titulo">BOM VOYAGE</h1>
+        </header>
+        <nav>
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../mer/mer.html">Mer</a></li>
+                <li><a href="../der/der.html">Der</a></li>
+                <li><a href="banco.html">Banco de Dados</a></li>
+                <li><a href="../metodologia/metodologia.html">Metodologia Ágil</a></li>
+                <li><a href="../cronograma/cronograma.html">Cronograma</a></li>
+                <li><a href="../sitemap/sitemap.html">Site Map</a></li>
+                <li><a href="../mockup/mockup.html">Mock up</a></li>
+                <li><a href="../../institucional/index.html">Institucional</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2 class="Subtitulo">Banco de Dados - Bom Voyage</h2>
+            <p style="text-align: center; color: #3DED97;">SQL</p>
+            <pre id="sql"></pre>
+
+
+
+
+        </main>
+        <aside>
+            <h2>Proxima Parte</h2>
+            <section class="seta">
+                <ul>
+                    <li><a href="../metodologia/metodologia.html">➡</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <script>
+        fetch("dbBomVoyage.sql")
+        .then(r => r.text())
+        .then(txt => {
+            document.getElementById("sql").textContent = txt;
+        });
+    </script>
+</body>
+</html>

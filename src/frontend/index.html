@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom Voyage | Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link class="icone" rel="icon" href="fotos/logo_icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#inicio" class="logo-link">
+                <img src="Fotos/logo_icon.png" alt="Logo Bom Voyage" class="logo-img">
+                <span class="logo-text" style="color: #0077b6;">Bom Voyage</span>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#passagens" class="nav-link">Passagens</a></li>
+                    <li><a href="#pacotes" class="nav-link">Pacotes</a></li>
+                    <li><a href="#pacotes-prontos" class="nav-link">Pacotes Prontos</a></li>
+                    <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+
+    <main class="main-content">
+        <section class="hero-search">
+            <h1>Explore o Mundo</h1>
+            <p>Encontre as melhores ofertas em voos e pacotes de viagem.</p>
+        </section>
+    </main>
+
+    <section class="passagens">
+        <h2>✈ Voos</h2>
+        <p>Ida e volta Somente Ida Múltiplos Destinos </p>
+        <p>De:</p>
+        <label for="cidade"></label>
+        <select name="cidade" id="cidade_origem">Cidade de Origem
+            <option value="Cidade">Cidade de Origem</option>
+            <option value="São_Paulo">São Paulo</option>
+            <option value="Campinas">Campinas</option>
+            <option value="Rio_de_janeiro">Rio de Janeiro</option>
+        </select>
+
+        <p>Para:</p>
+        <label for="cidade"></label>
+        <select name="cidade" id="cidade_destino">Cidade de Destino
+            <option value="Cidade">Cidade de Destino</option>
+            <option value="Paris">Paris</option>
+            <option value="Salvador">Salvador</option>
+            <option value="Rio_de_janeiro">Rio de Janeiro</option>
+        </select>
+        <p>Ida:</p>
+        <label for="data">Selecionar data:</label>
+        <input type="date" id="data" name="data">
+        <p>Volta:</p>
+        <label for="data">Selecionar data:</label>
+        <input type="date" id="data" name="data">
+
+        <p>Passageiros:</p>
+        <label for="Passageiros"></label>
+        <select name="Passageiros" id="passageiro">
+            <option value="1_passageiro">1 Passageiro</option>
+            <option value="2_passageiro">2 Passageiro</option>
+            <option value="3_passageiro">3 Passageiro</option>
+            <option value="4_ou_mais_passageiro">4 ou mais passageiros</option>
+        </select>
+
+        <p>Classe:</p>
+        <label for="classe"></label>
+        <select name="classe" id="classe">
+            <option value="Economica">Econômica</option>
+            <option value="Executiva">Executiva</option>
+        </select>
+
+        <button class="btnvoos">Encontrar Voos</button>
+    </section>
+</body>
+
+</html>

@@ -21,15 +21,215 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../mer/mer.html">Mer</a></li>
                 <li><a href="der.html">Der</a></li>
-                <li><a href="#">Banco de Dados</a></li>
+                <li><a href="../banco_de_dados/banco.html">Banco de Dados</a></li>
                 <li><a href="../metodologia/metodologia.html">Metodologia Ágil</a></li>
                 <li><a href="../cronograma/cronograma.html">Cronograma</a></li>
                 <li><a href="../sitemap/sitemap.html">Site Map</a></li>
+                <li><a href="../mockup/mockup.html">Mock up</a></li>
                 <li><a href="../../institucional/index.html">Institucional</a></li>
             </ul>
         </nav>
         <main>
-            <h2 class="Subtitulo">Der - Bom Voyage</h2>
+            <h3 style="text-align: center;">Modelo Lógico de Dados (DER) - Bon Voyage</h3>
+
+            <div class="diagrama-box">
+                <pre class="mermaid">
+                    erDiagram
+                        %% --- TABELAS ---
+
+                        Funcionarios {
+                            string nome
+                            string CPF PK
+                            string cargo
+                            date dataContratacao
+                            string email
+                            string telefone
+                            float salario
+                        }
+
+                        Gerenciamento_Gerencia {
+                            string fk_Funcionarios_CPF PK, FK
+                            int fk_Compras_Pagamentos_idCompra PK, FK
+                            int fk_Compras_Pagamentos_idPagamento PK, FK
+                        }
+
+                        Compras_Pagamentos {
+                            int idCompra PK
+                            string passagemIda
+                            string passagemVolta
+                            string fk_Passageiros_Check_in_Passagens_Assentos_CPF_RG FK
+                            int idPagamento PK
+                            int fk_tipoPagamento_tipoPagamento_PK FK
+                            int idPassagem
+                            float Valor
+                            datetime DataHoraPagamento
+                            int fk_StatusPagamento_StatusPagamento_PK FK
+                        }
+
+                        tipoPagamento {
+                            int tipoPagamento_PK PK
+                            string tipoPagamento
+                        }
+
+                        StatusPagamento {
+                            int StatusPagamento_PK PK
+                            string StatusPagamento
+                        }
+
+                        endereco {
+                            int endereco_PK PK
+                            string endereco
+                        }
+
+                        %% Esta é a tabela central gigante da sua imagem
+                        Passageiros_Check_in_Passagens_Assentos {
+                            string CPF_RG PK
+                            string nome
+                            date dataNascimento
+                            string genero
+                            int fk_endereco_endereco_PK FK
+                            string email
+                            string telefone
+                            string Checkin
+                            int idCheckin PK
+                            int idPassagens PK
+                            date dataEmissao
+                            float Preco
+                            string Classe
+                            int fk_Compras_Pagamentos_idCompra FK
+                            int fk_Voos_idVoo FK
+                            string numeroAssento PK
+                            string fk_Aeronaves_numeroSerie FK
+                        }
+
+                        Vistos {
+                            string TipoVisto
+                            date DataEmissao
+                            int fk_tipoVisto_tipoVisto_PK FK
+                            date DataExpiracao
+                            int idVisto PK
+                            string fk_Passageiros_Check_in_CPF FK
+                            int fk_Passageiros_Check_in_idCheckin FK
+                            int fk_Passageiros_Check_in_idPassagem FK
+                            string fk_Passageiros_Check_in_numeroAssento FK
+                        }
+
+                        tipoVisto {
+                            int tipoVisto_PK PK
+                            string tipoVisto
+                        }
+
+                        Passaportes {
+                            int idPassaporte PK
+                            string NumeroPassaporte
+                            date DataEmissao
+                            date DataExpiracao
+                            string PaisEmissor
+                            string fk_Passageiros_Check_in_CPF FK
+                            int fk_Passageiros_Check_in_idCheckin FK
+                            int fk_Passageiros_Check_in_idPassagem FK
+                            string fk_Passageiros_Check_in_numeroAssento FK
+                        }
+
+                        Vacinacoes {
+                            int idVacinacao PK
+                            string NomeVacina
+                            int fk_Fabricante_Fabricante_PK FK
+                            date DataDose
+                            string fk_Passageiros_Check_in_CPF FK
+                            int fk_Passageiros_Check_in_idCheckin FK
+                            int fk_Passageiros_Check_in_idPassagem FK
+                            string fk_Passageiros_Check_in_numeroAssento FK
+                        }
+
+                        Fabricante {
+                            int Fabricante_PK PK
+                            string Fabricante
+                        }
+
+                        Voos {
+                            int idVoo PK
+                            string numeroVoo
+                            datetime dataHoraPartida
+                            string Destino
+                            string Origem
+                            datetime dataHoraChegada
+                            string fk_Aeronaves_numeroSerie FK
+                            int fk_Portoes_idPortao FK
+                        }
+
+                        Portoes {
+                            int idPortao PK
+                            string Portao
+                            string fk_Aeroportos_codIATA FK
+                        }
+
+                        Aeroportos {
+                            string codIATA PK
+                            string nomeAeroporto
+                            string endereco
+                        }
+
+                        Aeronaves {
+                            string numeroSerie PK
+                            string modelo
+                            string fabricante
+                            int anoFabricacao
+                            int capacidadePassageiros
+                        }
+
+                        Aeronaves_Aeroportos_Ficam {
+                            string fk_Aeronaves_numeroSerie PK, FK
+                            string fk_Aeroportos_codIATA PK, FK
+                        }
+
+                        %% --- RELACIONAMENTOS (Baseados nas FKs das tabelas) ---
+
+                        %% Funcionarios -> Gerenciamento
+                        Funcionarios ||--|{ Gerenciamento_Gerencia : "1:N"
+                        
+                        %% Compras -> Gerenciamento
+                        Compras_Pagamentos ||--|{ Gerenciamento_Gerencia : "1:N"
+
+                        %% Pagamento Tipos
+                        tipoPagamento ||--|{ Compras_Pagamentos : "ref"
+                        StatusPagamento ||--|{ Compras_Pagamentos : "ref"
+
+                        %% Endereco -> Passageiros (Central)
+                        endereco ||--|{ Passageiros_Check_in_Passagens_Assentos : "reside"
+
+                        %% Compras <-> Passageiros (Central)
+                        %% Nota: Na sua imagem existem referências circulares ou duplas aqui, mantive a lógica das FKs visíveis
+                        Compras_Pagamentos }|--|{ Passageiros_Check_in_Passagens_Assentos : "contém/realiza"
+
+                        %% Documentos -> Passageiros (Central)
+                        Passageiros_Check_in_Passagens_Assentos ||--|{ Vistos : "possui"
+                        Passageiros_Check_in_Passagens_Assentos ||--|{ Passaportes : "detém"
+                        Passageiros_Check_in_Passagens_Assentos ||--|{ Vacinacoes : "tem"
+
+                        %% Tabelas de Apoio Documentos
+                        tipoVisto ||--|{ Vistos : "tipo"
+                        Fabricante ||--|{ Vacinacoes : "fabrica"
+
+                        %% Voos e Logística
+                        Voos ||--|{ Passageiros_Check_in_Passagens_Assentos : "leva"
+                        Aeronaves ||--|{ Passageiros_Check_in_Passagens_Assentos : "aloca"
+                        
+                        %% Aeronaves e Aeroportos
+                        Aeronaves ||--|{ Voos : "realiza"
+                        Portoes ||--|{ Voos : "embarca"
+                        Aeroportos ||--|{ Portoes : "possui"
+                        
+                        %% Associação N:N Aeronaves/Aeroportos
+                        Aeronaves ||--|{ Aeronaves_Aeroportos_Ficam : "fica"
+                        Aeroportos ||--|{ Aeronaves_Aeroportos_Ficam : "abriga"
+
+                </pre>
+            </div>
+                <script type="module">
+                    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+                    mermaid.initialize({ startOnLoad: true });
+                </script>
 
             </section>
         </main>
@@ -37,7 +237,7 @@
             <h2>Proxima Parte</h2>
             <section class="seta">
                 <ul>
-                    <li><a href="#">➡</a></li>
+                    <li><a href="../banco_de_dados/banco.html">➡</a></li>
                 </ul>
             </section>
         </aside>
