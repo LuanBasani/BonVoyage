@@ -97,5 +97,3 @@ create table vacinacoes (
     nomeVacina varchar(120),
     datadose date
 );
-
-select * from bomvoyagedb

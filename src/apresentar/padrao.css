@@ -67,7 +67,6 @@ header {
     align-items: center;
     gap: 20px;
     min-width: 330px;
-    border-radius: 10px;
     border: 1px solid black
 
 }
@@ -98,6 +97,7 @@ header{
     grid-area: header;
 }
 nav{
+    padding: 5px;
     grid-area: menu;
 }
 main{
@@ -145,4 +145,9 @@ nav a:hover {
     color: #0e2638;
     transform: scale(1.1); 
     box-shadow: 0 0 20px #3DED97; 
+    padding: 5px;
+}
+
+.seta{
+    padding: 5px;
 }
